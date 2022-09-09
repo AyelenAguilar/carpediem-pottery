@@ -1,17 +1,13 @@
 import './App.css';
+import ItemListContainer from './components/ItemListContainer';
+import Navbar from './components/Navbar';
 
-function App() {
+const App=()=> {
   return (
-  <div>
-  <header>
-    <h1>Carpe Diem</h1>
-    <ul>
-      <li>Seccion 1</li>
-      <li>Seccion 2</li>
-      <li>Seccion 3</li>
-    </ul>
-  </header>
-  </div>
+  <>
+  <Navbar/>
+  <ItemListContainer greeting="Productos disponibles"/>
+  </>
   );
 }
 
