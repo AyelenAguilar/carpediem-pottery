@@ -1,23 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&display=swap');
 
 *{
-  padding: 0;
+  padding:0;
   margin:0;
 }
 
 header{
-  background-color:#F1D188;
+  background-color:#F7E6C1;
 }
 
 h1{
   font-family: 'Crimson Text', serif;
   margin-left: 10px;
   text-align:left;
-}
-
-h2{
-  font-family: 'Crimson Text', serif;
-  margin-left: 50px;
+  
 }
 
 ul{
@@ -28,11 +24,12 @@ ul{
 }
 
 li{
-margin: 15px;
+margin: 25px;
+text-align: center;
 }
 
 .boton{
-  background-color: #F1D188;
+  background-color: #F7E6C1;
   border-color: black;
   border-radius: 5px;
   margin: 15px;
@@ -48,4 +45,41 @@ margin: 15px;
 .titulo{
   margin: 30px;
   text-align:justify;
+}
+
+.cards{
+  background-color: #F7E6C1;
+  width: 200px;
+    padding-top: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 5px 1px gainsboro;
+
+}
+
+.container-cards{
+  display: flex;
+  justify-content: center;
+}
+
+.carritologo{
+  display: flex;
+  width: 20px;
+  align-content: stretch;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+
+
+.seccion{
+  text-align: center;
+  font-size:xx-large;
+  font-family:'Crimson Text', serif; 
+  margin:15px;
+}
+
+.img{
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
 }

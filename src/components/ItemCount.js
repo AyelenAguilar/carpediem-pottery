@@ -10,7 +10,7 @@ const ItemCount=({titulo})=>{
     }
     
     const resta=()=>{
-        if (cantidad >=0){
+        if (cantidad >=1){
     
     setCant(cantidad-1)}
 
