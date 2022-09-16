@@ -29,7 +29,7 @@ text-align: center;
 }
 
 .boton{
-  background-color: #F7E6C1;
+  
   border-color: black;
   border-radius: 5px;
   margin: 15px;
@@ -82,4 +82,39 @@ text-align: center;
   width: 200px;
   height: 200px;
   border-radius: 5px;
+}
+
+.detailContainer{
+  margin: 50px;
+  background-color: #F7E6C1;
+  border-radius: 10px;
+}
+
+.imgDetail{
+width: 350px;
+height: 350px;
+margin-top: 15px;
+
+}
+
+.detalles{
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  flex-direction: column;
+  text-align: justify;
+  align-items: center;
+  margin-left: 420px;
+  margin-right: 10px;
+    align-items: flex-start;
+}
+
+h3{
+  font-size: x-large;
+  margin: 10px;
+}
+
+.precio{
+  font-size: xx-large;
+  margin: 10px;
 }

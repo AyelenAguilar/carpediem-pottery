@@ -1,13 +1,12 @@
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import Navbar from './components/Navbar';
 
 const App=()=> {
   return (
   <>
   <Navbar/>
-  <ItemListContainer greeting="Productos disponibles"
-  />
+  <ItemDetailContainer/>
   </>
   );
 }

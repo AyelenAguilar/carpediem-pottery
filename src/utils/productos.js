@@ -28,6 +28,7 @@ const datosProductos=[
         titulo:"Platos infantiles",
         imagen:"platosinfantiles.jpg",
         precio:"1200",
+        detalle:"Platos infantiles de ceramica, barnizados y con personaje a elegir",
         stock:"15"
     },
 
@@ -41,7 +42,7 @@ const datosProductos=[
 
     {
         id:6,
-        titulo:"Kit plato frutal",
+        titulo:"Set plato frutal",
         imagen:"kitplatosfrutales.jpg",
         precio:"2000",
         stock:"15"
