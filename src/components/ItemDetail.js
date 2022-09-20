@@ -2,6 +2,7 @@ import "../App.css"
 import { useState } from "react";
 import ItemCount from "./ItemCount";
 
+
 const ItemDetail=({producto})=>{
     const[cantidad, setCant]= useState(0);
 
@@ -29,27 +30,24 @@ const ItemDetail=({producto})=>{
 
 return(
     <>
-    
         <div className="detailContainer">
             <h3>{producto.titulo}</h3>
+            <div className="detailsWrap">
             <img className="imgDetail" src={producto.imagen}></img>
             <div className="detalles">
             <p className="descripcionDetalle">{producto.detalle}</p>
             <p className="precio">${producto.precio}</p>
-            <p>Quedan disponibles:{producto.stock} unidades</p>
+            <p className="disponibles">Quedan disponibles:{producto.stock} unidades</p>
             </div>
+            </div>
+            
             <ItemCount
-    producto={producto}
-    suma={suma}
-    resta={resta}
-    cantidad={cantidad}
-    agregar={agregar}
-    />
+            suma={suma}
+            resta={resta}
+            cantidad={cantidad}
+            agregar={agregar}
+        />
         </div>
-        
-    
-    
-    
     </>
 )
 

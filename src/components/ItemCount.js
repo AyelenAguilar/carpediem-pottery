@@ -28,13 +28,11 @@ const ItemCount=({titulo})=>{
     return(
         <div>
         <h3 className="titulo">{titulo}</h3>
-        
         <button className="boton" onClick={suma}>+</button>
         <span>{cantidad}</span>
         <button className="boton" onClick={resta}>-</button>
         <button className="boton btn" onClick={agregar}>Agregar al carrito</button>
         </div>
-
     );
 
     }

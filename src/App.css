@@ -9,10 +9,13 @@ header{
   background-color:#F7E6C1;
 }
 
-h1{
+.nombrePagina{
   font-family: 'Crimson Text', serif;
   margin-left: 10px;
   text-align:left;
+  text-decoration: none;
+  color: black;
+  font-size: 35px;
   
 }
 
@@ -23,9 +26,18 @@ ul{
   list-style: none;
 }
 
-li{
-margin: 25px;
+.categoria{
+margin-left: 25px;
 text-align: center;
+text-decoration: none;
+color: black;
+font-family: 'Crimson Text', serif;
+font-size: 20px;
+}
+
+h3{
+  font-size: 30px;
+  margin-left: 10px;
 }
 
 .boton{
@@ -37,6 +49,20 @@ text-align: center;
   height: 50px;
 }
 
+.btn-detalles{
+  background-color: white;
+  border-color: black;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.stock{
+  margin: 10px;
+}
+
+
 .btn{
   font-size: large;
   width: 100px;
@@ -47,9 +73,15 @@ text-align: center;
   text-align:justify;
 }
 
+.disponibles{
+  color: gray;
+  display: flex;
+  margin-top: 100px;
+}
+
 .cards{
   background-color: #F7E6C1;
-  width: 200px;
+  width: 300px;
     padding-top: 20px;
     margin: 10px;
     text-align: center;
@@ -58,16 +90,18 @@ text-align: center;
 }
 
 .container-cards{
+  margin: 20px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .carritologo{
   display: flex;
-  width: 20px;
-  align-content: stretch;
-    justify-content: center;
-    flex-direction: column-reverse;
+  width: 98%;
+  margin-right: 15px;
+  justify-content: flex-end;
+    
 }
 
 
@@ -78,7 +112,7 @@ text-align: center;
   margin:15px;
 }
 
-.img{
+.img, .imgDetail{
   width: 200px;
   height: 200px;
   border-radius: 5px;
@@ -88,33 +122,44 @@ text-align: center;
   margin: 50px;
   background-color: #F7E6C1;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px 1px gainsboro;
 }
 
 .imgDetail{
-width: 350px;
-height: 350px;
+width: 300px;
+height: 300px;
 margin-top: 15px;
 
 }
 
 .detalles{
-  display: flex;
-  background-color: white;
-  border-radius: 10px;
-  flex-direction: column;
-  text-align: justify;
-  align-items: center;
-  margin-left: 420px;
-  margin-right: 10px;
-    align-items: flex-start;
+justify-content: flex-end;
+align-items: center;
+display: flex;
+flex-wrap: wrap;
+font-size: 20px;
 }
 
-h3{
-  font-size: x-large;
-  margin: 10px;
+.descripcionDetalle{
+  margin: 20px;
 }
+
+.detailsWrap{
+  display: flex;
+flex-wrap: nowrap;
+align-items: center;
+}
+
 
 .precio{
-  font-size: xx-large;
+  font-size: 40px;
   margin: 10px;
+}
+
+footer{
+  background-color: #F7E6C1;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  text-align: center;
 }
