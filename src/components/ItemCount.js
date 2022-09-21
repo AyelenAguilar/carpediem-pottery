@@ -20,7 +20,7 @@ const ItemCount=({titulo})=>{
     
             if(cantidad !== 0){
                 alert(`Se han agregado al carrito ${cantidad} productos`)
-                setCant(1);
+                setCant(0);
             }
     
     }

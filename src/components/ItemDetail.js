@@ -1,32 +1,17 @@
 import "../App.css"
 import { useState } from "react";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 
 const ItemDetail=({producto})=>{
-    const[cantidad, setCant]= useState(0);
 
-    const suma=()=>{
-        if(cantidad<5){
-        setCant(cantidad+1)}
-    }
-    
-    const resta=()=>{
-        if (cantidad >=1){
-    
-    setCant(cantidad-1)}
+    const [itemCount, setItemCount]= useState(0);
 
+    const onAdd=(cantidad)=>{
+        alert("Agregaste"+ cantidad + "productos");
+        setItemCount(cantidad);
     }
-    const agregar = () => {
-        setCant (cantidad);
-    
-            if(cantidad !== 0){
-                alert(`Se han agregado al carrito ${cantidad} productos`)
-                setCant(1);
-            }
-    
-    }
-
 
 return(
     <>
@@ -40,13 +25,9 @@ return(
             <p className="disponibles">Quedan disponibles:{producto.stock} unidades</p>
             </div>
             </div>
-            
-            <ItemCount
-            suma={suma}
-            resta={resta}
-            cantidad={cantidad}
-            agregar={agregar}
-        />
+            {
+            itemCount ===0 ?<ItemCount stock={producto.stock} initial={itemCount} onAdd={onAdd}/>:<Link to="/cart"><button>Ir al carrito</button></Link>
+            }
         </div>
     </>
 )
