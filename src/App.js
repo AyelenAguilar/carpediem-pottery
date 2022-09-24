@@ -5,9 +5,12 @@ import ItemListContainer from './components/ItemListContainer';
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Footer from './components/Footer';
 import Cart from './components/Cart';
+import CartContextProvider from './components/CartContext';
+
 
 const App=()=> {
   return (
+  <CartContextProvider>
   <BrowserRouter>
   <Navbar/>
   <Routes>
@@ -18,6 +21,8 @@ const App=()=> {
   </Routes>
   <Footer/>
   </BrowserRouter>
+  </CartContextProvider>
+  
   );
 }
 

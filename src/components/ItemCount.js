@@ -1,11 +1,11 @@
 import "../App.css";
 import { useState } from "react";
-const ItemCount=({titulo})=>{
+const ItemCount=({titulo, stock, onAdd})=>{
 
     const[cantidad, setCant]= useState(0);
 
     const suma=()=>{
-        if(cantidad<5){
+        if(cantidad<stock){
         setCant(cantidad+1)}
     }
     
@@ -15,15 +15,9 @@ const ItemCount=({titulo})=>{
     setCant(cantidad-1)}
 
     }
-    const agregar = () => {
-        setCant (cantidad);
     
-            if(cantidad !== 0){
-                alert(`Se han agregado al carrito ${cantidad} productos`)
-                setCant(0);
-            }
     
-    }
+    
 
     return(
         <div>
@@ -31,10 +25,10 @@ const ItemCount=({titulo})=>{
         <button className="boton" onClick={suma}>+</button>
         <span>{cantidad}</span>
         <button className="boton" onClick={resta}>-</button>
-        <button className="boton btn" onClick={agregar}>Agregar al carrito</button>
+        <button className="boton btn" onClick={()=>onAdd(cantidad)}>Agregar al carrito</button>
         </div>
     );
 
-    }
+}
 
 export default ItemCount;
