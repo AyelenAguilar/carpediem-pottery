@@ -66,6 +66,9 @@ h3{
 .btn{
   font-size: large;
   width: 100px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
 }
 
 .titulo{
@@ -162,4 +165,28 @@ footer{
   height: 50px;
   justify-content: center;
   text-align: center;
+}
+
+.imgCarrito{
+  width: 80px;
+}
+
+.divCarrito{
+  list-style: none;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-bottom: 2px solid;
+  border-bottom-color: #dddcda;
+  display: flex;
+  justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.totalCarrito{
+  display: flex;
+  margin-left: 25px;
+  margin-right: 75px;
+  align-items: center;
+    justify-content: space-between;
 }

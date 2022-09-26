@@ -13,9 +13,9 @@ const ItemDetail=({producto})=>{
     
 
     const onAdd=(cantidad)=>{
-        alert("Agregaste"+ cantidad + "productos");
+        alert("Agregaste"+cantidad +"productos");
         setItemCount(cantidad);
-        addItem(producto,cantidad)
+        addItem(producto,cantidad);
         
     }
 
@@ -32,7 +32,7 @@ return(
             </div>
             </div>
             {
-            itemCount ===0 ?<ItemCount stock={producto.stock} initial={itemCount} onAdd={onAdd}/>:<Link to="/cart"><button>Ir al carrito</button></Link>
+            itemCount ===0 ?<ItemCount stock={producto.stock} initial={itemCount} onAdd={onAdd}/>:<Link to="/cart"><button className="btn">Ir al carrito</button></Link>
             }
         </div>
     </>

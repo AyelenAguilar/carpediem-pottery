@@ -10,7 +10,7 @@ const Navbar=()=>{
     <Link to="/category/7" className="categoria">PLATOS</Link>
     <Link to="/category/8" className="categoria">VARIOS</Link>
     </ul>
-    <div className="carritologo"><CartWidget/></div>
+    <Link to="/cart"> <div className="carritologo"><CartWidget/></div></Link>
     </header>
   
     );
