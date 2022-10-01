@@ -1,28 +1,40 @@
 import React, {useEffect, useState} from "react";
 import ItemList from "./ItemList";
 import "../App.css";
-import { collection, getDocs } from "firebase/firestore";
+import Cargando from "./cargando";
+import { collection, getDocs, where, query } from "firebase/firestore";
 import {db} from '../utils/firebaseConfig'
+import { useParams } from "react-router-dom";
+
 
 const ItemListContainer=()=>{
     
     const [arrayProductos, setArrayProductos]= useState([]);
+    const[cargando, setCargando]= useState(false)
+    const {id}=useParams();
     
 
     useEffect(()=>{
+        setCargando(true)
         const consultaFirestore= async()=>{
-            const querySnapshot = await getDocs(collection(db,"productos"));
-            const datosFirestore=querySnapshot.docs.map(producto =>({
-            id: producto.id,
-            ...producto.data()
-            }))
-            return datosFirestore
-            
-            
+            let q
+            if(id){
+                q= query(collection(db, "productos"), where('categoriaId', '==', parseInt(id)))
+            }else{
+                q=query(collection(db, "productos"))
+            }
+        const querySnapshot = await getDocs(q);
+        const dataFromFirestore= querySnapshot.docs.map(document => ({
+            id: document.id,
+            ...document.data()
+
+        })); 
+            setCargando(false)
+            return dataFromFirestore
         } 
         consultaFirestore()
-        .then(result => console.log(result))
-    },[arrayProductos]);
+            .then(result => setArrayProductos(result))
+    },[id]);
         
     
     useEffect(()=>{
@@ -35,10 +47,10 @@ const ItemListContainer=()=>{
 
     return(
     <div className="container-cards">
-    <ItemList productos={arrayProductos}/>
+    {cargando ? <Cargando/>  :<ItemList productos={arrayProductos}/>}
     </div>
     
-      );
+    );
     }
 
 export default ItemListContainer;

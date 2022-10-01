@@ -190,3 +190,9 @@ footer{
   align-items: center;
     justify-content: space-between;
 }
+
+.cartVacio{
+  margin-top: 150px;
+  margin-bottom: 100%;
+  text-align: center;
+}

@@ -11,16 +11,17 @@ const Cart=()=>{
     <>
     <h1>Carrito de compras</h1>
     {cartList.length === 0 ?
-    <div>
+    <div className="cartVacio">
         <p>El carrito esta vacío</p>
         <Link to="/">Volver a página principal</Link>
     </div>
+    
     :
     <div>
+
     {
         cartList.map((producto) =>
             <>
-            
             <div className="divCarrito" >
             <li>{producto.titulo}</li>
             <img src={producto.imagen} className="imgCarrito"></img>
@@ -28,15 +29,11 @@ const Cart=()=>{
             <div>CANTIDAD:{producto.cantidad}</div>
             <button className="btn" onClick={()=> removeItem(producto.id)}>Eliminar producto</button>
             </div>
-    
             </>
-
             )
     
     
     }
-    
-    </div>}
     <div className="totalCarrito">
     <button className="btn" onClick={clear}>Vaciar carrito</button>
     <p>Productos agregados:{prodAgregados()}</p>
@@ -44,7 +41,10 @@ const Cart=()=>{
     </div>
 
     <button className="btn">Terminar compra</button>
+    </div>}
+    
     </>
+
     );
 }
 
