@@ -10,14 +10,12 @@ const ItemCount=({titulo, stock, onAdd})=>{
     }
     
     const resta=()=>{
-        if (cantidad >=1){
+        if (cantidad >0){
     
     setCant(cantidad-1)}
 
     }
-    
-    
-    
+
 
     return(
         <div>
