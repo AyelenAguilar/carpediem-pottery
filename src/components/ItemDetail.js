@@ -13,7 +13,7 @@ const ItemDetail=({producto})=>{
     
 
     const onAdd=(cantidad)=>{
-        alert("Agregaste"+cantidad +"productos");
+        alert("Agregaste "+ cantidad +" productos");
         setItemCount(cantidad);
         addItem(producto,cantidad);
         

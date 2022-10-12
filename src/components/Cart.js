@@ -29,12 +29,11 @@ const Cart=()=>{
         const nuevaOrden= doc(collection(db, "ordenes"))
         await setDoc(nuevaOrden, orden);
 
-        cartList.forEach(async(producto)=>{
-            const prodRef = doc(db, "productos",producto.id);
-            console.log(producto.id, producto.cantidad)
+        cartList.forEach(async(prod)=>{
+            const prodRef = doc(db, "productos", prod.id);
             await updateDoc(prodRef, {
-            stock: increment(-producto.cantidad)
-            //arreglar el stock increment
+            stock: increment(-prod.cantidad)
+            
         });
         })
         
