@@ -93,7 +93,7 @@ h3{
 
 }
 
-.container-cards{
+.container-cards, .container-details{
   margin: 20px;
   display: flex;
   justify-content: center;
@@ -212,6 +212,11 @@ footer{
  display: flex;
  align-items: flex-end;
  flex-direction: column;
- 
- 
+}
+
+.subtotal{
+  margin: 20px;
+  border-bottom: 2px solid;
+  border-bottom-color: #dddcda;
+
 }

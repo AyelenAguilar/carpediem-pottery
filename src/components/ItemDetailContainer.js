@@ -29,7 +29,7 @@ const ItemDetailContainer=()=>{
     return(
 
         
-    <div>
+    <div className="container-details">
         
         {cargando ? <Cargando/> : <ItemDetail producto={producto}/>}
     </div>  

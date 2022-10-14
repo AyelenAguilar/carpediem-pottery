@@ -1,13 +1,12 @@
-
 import { serverTimestamp, setDoc,doc , collection, updateDoc, increment} from "firebase/firestore";
 import { db } from "../utils/firebaseConfig";
 import {  useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
-
+import Swal from "sweetalert2";
 
 const Cart=()=>{
-    const {cartList, clear, removeItem, totalCompra, prodAgregados}=useContext(CartContext);
+    const {cartList, clear, removeItem, totalCompra, prodAgregados, subtotal}=useContext(CartContext);
 
     const crearOrden= async()=>{
         let productosDB= cartList.map(prod =>({
@@ -38,7 +37,18 @@ const Cart=()=>{
         })
         
         clear()
-        alert('Tu orden de compra ha sido creada')
+        Swal.fire({
+            title: 'Tu orden de compra ha sido creada',
+            color:'black',
+            background:'#F7E6C1',
+            confirmButtonColor: "black",
+            showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
     }
 
     return(
@@ -50,7 +60,6 @@ const Cart=()=>{
         <p>El carrito esta vacío</p>
         <Link to="/">Volver a página principal</Link>
     </div>
-    
     :
     <div>
 
@@ -59,7 +68,7 @@ const Cart=()=>{
         <div key={producto.id}>
             <div className="divCarrito">
             <li>{producto.titulo}</li>
-            <img src={producto.imagen} className="imgCarrito"></img>
+            <img src={producto.imagen} className="imgCarrito" alt="imagenes de los productos seccion carrito"></img>
             <div>PRECIO ${producto.precio}</div>
             <div>CANTIDAD:{producto.cantidad}</div>
             <button className="btn" onClick={()=> removeItem(producto.id)}>Eliminar producto</button>
@@ -75,8 +84,8 @@ const Cart=()=>{
     <div>
     <div className="ordenCompra">
     <h3>Orden de compra:</h3>
-    <p>Subtotal</p>
-    <p>TOTAL COMPRA: ${totalCompra()}</p>
+    <p className="subtotal">Subtotal: ${subtotal()}</p>
+    <p> <strong> TOTAL COMPRA: ${totalCompra()}</strong></p>
     
     <button onClick={crearOrden} className="btn">Terminar compra</button>
     </div>
